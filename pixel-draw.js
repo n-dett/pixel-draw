@@ -1,23 +1,41 @@
 let gridContainer = document.querySelector('.grid-container');
+let gridNum = 16;
 
 
-
-function createGridRow() {
-  let gridRow = document.createElement('div');
-  gridRow.classList.add('grid-row');
+function creategridColumn() {
+  let gridColumn = document.createElement('div');
+  gridColumn.classList.add('grid-column');
   
-  for(i = 0; i < 16; i++){
+  for(i = 0; i < gridNum; i++){
     let gridSquare = document.createElement('div');
     gridSquare.classList.add('grid-squares');
-    gridRow.appendChild(gridSquare);
+    gridColumn.appendChild(gridSquare);
   }
-  gridContainer.appendChild(gridRow);
+  gridContainer.appendChild(gridColumn);
 }
 
+
 function createGrid() {
-    for(j = 0; j < 16; j++){
-      createGridRow()
+    for(j = 0; j < gridNum; j++){
+      creategridColumn()
     }
 }
 
+
 createGrid();
+
+
+
+
+
+
+// function createGrid() {
+//   for(i = 0; i < Math.pow(gridNum, 2); i++){
+//     let gridSquare = document.createElement('div');
+//     gridSquare.classList.add('grid-squares');
+//     gridContainer.appendChild(gridSquare);
+//   }
+// }
+
+
+// createGrid();
