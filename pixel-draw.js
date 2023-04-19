@@ -15,12 +15,17 @@ createGrid();
 
 // Choose pen color
 let penColor = '#000000';
+let choosePen = document.querySelector('#pen-button');
 
 const colorPicker = document.querySelector("#colorpicker")
 colorPicker.addEventListener("input", function(event){
   penColor = event.target.value;
   console.log(penColor);
 });
+
+choosePen.addEventListener('click', (event) => {
+  penColor = colorPicker.value;
+})
 
 
 // Draw
