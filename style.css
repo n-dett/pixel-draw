@@ -42,7 +42,7 @@ body {
     flex-wrap: wrap;
     aspect-ratio: 1/1;
     margin-top: 20px;
-    margin-left: 136px;
+    margin-left: 145px;
 }
 
 .grid-squares {
@@ -62,16 +62,29 @@ p {
 
 button {
     background: none;
+    background-color: white;
     /* border: none; */
     font-size: 20px;
     font-family: 'Silkscreen', sans-serif;
     cursor: pointer;
     text-align: left;
-    padding: 0;
+    padding: 3px;
     margin: 0;
+    border: solid black;
+    text-align: center;
 }
 
 button:hover {
     color: #ff00bb;
+}
+
+#colorpicker {
+    appearance: none;
+    border: solid 1px #808080;
+    background: none;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
 }
 

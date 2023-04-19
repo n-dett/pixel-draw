@@ -13,9 +13,18 @@ function createGrid() {
 
 createGrid();
 
+// Choose pen color
+let penColor = '#000000';
+
+const colorPicker = document.querySelector("#colorpicker")
+colorPicker.addEventListener("input", function(event){
+  penColor = event.target.value;
+  console.log(penColor);
+});
+
+
 // Draw
 const gridSquare = document.querySelectorAll('.grid-squares');
-let penColor = '#0066ff';
 
 gridSquare.forEach(square => {
   square.addEventListener('mousedown', changeColor)
