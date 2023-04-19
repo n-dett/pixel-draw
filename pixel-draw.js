@@ -37,6 +37,9 @@ function changeColor() {
   this.style.backgroundColor = penColor;
 }
 
+// Eraser tool
+let erase = document.querySelector('#eraser-button');
+erase.addEventListener('click', () => penColor = '#ffffff')
 
 // Reset grid to white
 function clearGrid() {
