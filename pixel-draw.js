@@ -1,4 +1,4 @@
-let gridContainer = document.querySelector('.grid-container');
+const gridContainer = document.querySelector('.grid-container');
 let gridNum = 16;
 
 // Create initial grid
@@ -13,29 +13,39 @@ function createGrid() {
 
 createGrid();
 
-let gridSquare = document.querySelectorAll('.grid-squares');
-let currentColor = '#0066ff';
+// Draw
+const gridSquare = document.querySelectorAll('.grid-squares');
+let penColor = '#0066ff';
 
-function draw() {
-  gridSquare.forEach(pixel => {
-    pixel.addEventListener('mousedown', changeColor);
-    pixel.addEventListener('mousemove', changeColor);
-  })
-}
+gridSquare.forEach(square => {
+  square.addEventListener('mousedown', changeColor)
+})
+
+gridContainer.addEventListener('mousedown', () => {
+  gridSquare.forEach(square => {
+    square.addEventListener('mouseover', changeColor);
+  });
+});
+
+gridContainer.addEventListener('mouseup', () => {  
+  gridSquare.forEach(square => {
+    square.removeEventListener('mouseover', changeColor);
+  });
+});
 
 function changeColor() {
-  gridSquare.forEach(() => {
-      this.style.backgroundColor = currentColor
-  }
-)}
+  this.style.backgroundColor = penColor;
+}
 
+
+// Reset grid to white
 function clearGrid() {
   let clearButton = document.querySelector('#clear-button');
   clearButton.addEventListener('click', () => {
-    gridSquare.forEach(pixel => {
-      pixel.style.backgroundColor = '#ffffff';
+    gridSquare.forEach(square => {
+      square.style.backgroundColor = '#ffffff';
     })
   })
 }
+
 clearGrid();
-draw();
