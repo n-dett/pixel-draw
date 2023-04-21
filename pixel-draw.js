@@ -15,7 +15,6 @@ gridSlider.addEventListener('input', () => {
   gridNum = gridSlider.value;
   removeSquares(gridContainer);
   createGrid();
-  // draw();
 })
 
 function removeSquares(parent) {
@@ -33,6 +32,8 @@ function createGrid() {
     gridSquare.style.width = `calc(100% / ${gridNum})`;
     gridContainer.appendChild(gridSquare);
   }
+
+  // Draw on mousedown or mousedown and drag
   const gridSquares = document.querySelectorAll('.grid-squares');
 
   gridSquares.forEach(square => {
@@ -69,35 +70,11 @@ colorPicker.addEventListener("input", function(event){
   console.log(penColor);
 });
 
+
 // Select pen tool
 penButton.addEventListener('click', () => {
   penColor = colorPicker.value;
 })
-
-
-// Draw on mousedown or mousedown and drag
-
-// const gridSquares = document.querySelectorAll('.grid-squares');
-
-// gridSquares.forEach(square => {
-//   square.addEventListener('mousedown', changeColor)
-// })
-
-// gridContainer.addEventListener('mousedown', () => {
-//   gridSquares.forEach(square => {
-//     square.addEventListener('mouseover', changeColor);
-//   });
-// });
-
-// gridContainer.addEventListener('mouseup', () => {  
-//   gridSquares.forEach(square => {
-//     square.removeEventListener('mouseover', changeColor);
-//   });
-// });
-
-// function changeColor() {
-//   this.style.backgroundColor = penColor;
-// }
 
 
 // Select eraser tool
@@ -109,7 +86,7 @@ erase.addEventListener('click', () => penColor = '#ffffff')
 function clearGrid() {
   const gridSquares = document.querySelectorAll('.grid-squares');
   let clearButton = document.querySelector('#clear-button');
-  
+
   clearButton.addEventListener('click', () => {
     gridSquares.forEach(square => {
       square.style.backgroundColor = '#ffffff';

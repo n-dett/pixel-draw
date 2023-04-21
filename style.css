@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Silkscreen', sans-serif;
-    background-color: #dbdbdb;
+    background-color: #c1c7fe;
 }
 
 .content {
@@ -64,7 +64,6 @@ p {
 button {
     background: none;
     background-color: white;
-    /* border: none; */
     font-size: 20px;
     font-family: 'Silkscreen', sans-serif;
     cursor: pointer;
