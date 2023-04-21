@@ -19,9 +19,10 @@ body {
 
 .content {
     display: flex;
+    width: 100%;
     flex: 1;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .options {
@@ -29,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
+    width: 150px;
 }
 
 .grid-container {
@@ -74,6 +75,11 @@ button {
     text-align: center;
 }
 
+p {
+    font-size: 20px;
+    text-align: center;
+}
+
 button:hover {
     color: #ff00bb;
 }
@@ -88,3 +94,36 @@ button:hover {
     cursor: pointer;
 }
 
+.slider-container {
+    width: 100%;
+    
+}
+
+#grid-slider {
+    -webkit-appearance: none;
+    border: solid black 1.5px;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: 25px; 
+    height: 25px; 
+    background: #ff00bb;
+    cursor: pointer; 
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; 
+    height: 25px; 
+    background: #ff00bb;
+    cursor: pointer;
+  }
+
+  #label-container {
+    width: 100%;
+    margin-top: 0px;
+  }
